@@ -7,28 +7,37 @@
     <title>Document</title>
   </head>
   <body>
-      <div id="app">
-        <p>{{ msg }}</p>
-        <p>{{ Ehverdade ? 'verdade' : 'falso'}}</p>
-        <p>{{ frutas[2] + ' e ' + frutas[0] }}</p>
-        <p>Aluno(a): {{  alunos.nome }}</p>
-        <p>{{  1 + num1 }}</p>
-        <p>{{  fun() }}</p>
-      </div>
+    <div id="app">
+      <p>{{ msg }}</p>
+      <p>{{ Ehverdade ? 'verdade' : 'falso'}}</p>
+      <p>{{ frutas[2] + ' e ' + frutas[0] }}</p>
+      <p>Aluno(a): {{ alunos.nome }}</p>
+      <p>{{ 1 + num1 }}</p>
+      <p>{{ metodo() }}</p>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
-      new Vue({                  // "new Vue({}): Instância do VueJS"
-        el: '#app',             // "el: significa "elemento" no Vue" 
-        data:{                 //data: = dados
-          msg: "Teste de mensagem", //string
-          Ehverdade: true,  //boolean
-          frutas: ['Pera', 'Uva', 'Maçã'],  //objeto
-          alunos:{nome: 'Paula'},
-          num1: 1,    //number
-          fun: function(){
+      new Vue({
+        // "new Vue({}): Instância do VueJS"
+        el: '#app', // "el: significa "elemento" no Vue"
+        data: {
+          //data: = dados
+          msg: 'Teste de mensagem', //string
+          Ehverdade: true, //boolean
+          frutas: [' Pera', ' Uva', ' Maçã'], //objeto
+          alunos: { nome: 'Paula' },
+          num1: 1 //number
+
+          /*fun: function(){
             return 'Mensagem da Função !'
-          }   //functions
+          }   //functions*/
+        },
+
+        methods: {  //o methods é o local mais indicado para se utilizar functions, ou seja, não é recomendável utilizar functions dentro do data (é possível, mas não recomendado)
+          metodo() {
+            return 'Frutas: ' + this.frutas[1]
+          }
         }
       })
     </script>
