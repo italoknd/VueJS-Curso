@@ -8,21 +8,27 @@
   </head>
   <body>
       <div id="app">
-        {{ msg }}
+        <p>{{ msg }}</p>
+        <p>{{ Ehverdade ? 'verdade' : 'falso'}}</p>
+        <p>{{ frutas[2] + ' e ' + frutas[0] }}</p>
+        <p>Aluno(a): {{  alunos.nome }}</p>
+        <p>{{  1 + num1 }}</p>
+        <p>{{  fun() }}</p>
       </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
-
-      // "new Vue({}): Instância do VueJS"
-      new Vue({
-        // "el: significa "elemento" no Vue"
-        el: '#app',
-
-        //data: = dados
-        data:{
-          msg: "Teste de mensagem"
+      new Vue({                  // "new Vue({}): Instância do VueJS"
+        el: '#app',             // "el: significa "elemento" no Vue" 
+        data:{                 //data: = dados
+          msg: "Teste de mensagem", //string
+          Ehverdade: true,  //boolean
+          frutas: ['Pera', 'Uva', 'Maçã'],  //objeto
+          alunos:{nome: 'Paula'},
+          num1: 1,    //number
+          fun: function(){
+            return 'Mensagem da Função !'
+          }   //functions
         }
       })
     </script>
