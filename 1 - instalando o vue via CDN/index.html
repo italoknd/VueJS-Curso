@@ -11,7 +11,16 @@
 </head>
 <body>
   <div id="app">
-    <p>O meu nome é: {{name}} e tenho {{age}} anos.</p>
+    <form id="">
+      <input type="text" v-model="input_name" placeholder="Digite o seu nome: ">
+      <input type="submit" value="Enviar" v-on:click="submitForm">
+
+      <input type="number" v-model="input_age" placeholder="Informe sua idade: ">
+      <input type="submit" value="Enviar" v-on:click="submitForm">
+      
+    </form>
+    <p>Seu nome é: {{name}} e você tem {{age}} anos.</p>
+    <p>Data biding: {{input_name}}, {{input_age}} idade.</p>
   </div>
 </body>
 </html>
