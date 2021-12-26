@@ -2,12 +2,15 @@
   <div>
     <p v-if="esta_trabalhando">Estou trabalhando no momento</p>
     <p v-else>Não estou trabalhando</p>
-    <p>Utilizo as seguintes tecnologias</p>
+    <p>Utilizo as seguintes linguagens back-end</p>
     <ul>
-      <li>Javascript</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Vue JS</li>
+      <li v-for="(technology, index) in backend_technologies" v-bind:key="index">{{technology}}</li>
+    </ul>
+    <p>Utilizo as seguintes linguagens front-end</p>
+    <ul>
+      <li v-for="tecnologias in frontend_technologies" v-bind:key="tecnologias.id">
+        {{tecnologias.name}}
+      </li>
     </ul>
     <div>
       <button @click="showEmail">{{ buttonText }}</button>
@@ -27,9 +30,17 @@ export default {
     return {
       esta_trabalhando: true,
       mostrar_email: false,
-      email: "italopedroza21@gmail.com",
+      email: "EMAIL@gmail.com",
       meu_link: "https://google.com",
-      buttonText: "Mostrar email"
+      buttonText: "Mostrar email",
+
+      backend_technologies: ["Javascript", "Node_JS", "PHP","Java" ,"C" ],
+
+      frontend_technologies: [
+        {id: 1, name: 'HTML'},
+        {id: 2, name: 'CSS'},
+        {id: 3, name: 'VUE'}
+      ]
     }
   },
   components:{
