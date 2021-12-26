@@ -10,18 +10,27 @@
       <li>Vue JS</li>
     </ul>
     <p v-show="mostrar_email">Mande um email para: {{email}}</p>
+    <p>Para acessar meu portfólio, basta <a v-bind:href="meu_link" target="_blank">clicar aqui</a></p>
+    <Picture/>
+    <a href=""></a>
   </div>
 </template>
 
 <script>
+import Picture from "./Picture.vue"
+
 export default {
   name: 'info',
   data() {
     return {
       esta_trabalhando: true,
       mostrar_email: false,
-      email: "italopedroza21@gmail.com"
+      email: "italopedroza21@gmail.com",
+      meu_link: "https://google.com"
     }
   },
+  components:{
+    Picture
+  }
 }
 </script>
