@@ -14,11 +14,18 @@
       setTimeout(() => {
         this.nome = "Italo"
       }, 1000);
+      this.lifecycle()
     },
     mounted() { //esta hook tem hierarquia maior que o created
       setTimeout(() => {
         this.nome = "Unknown"
       }, 2000);
+      this.lifecycle()
+    },
+    methods: {
+      lifecycle(){
+        console.log("Olá Mundo!");
+      }
     },
   }
 </script>
