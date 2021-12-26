@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header/>
     <PrimeiroComponente/>
     <LifeCycle/>
     <Pessoa/>
@@ -11,6 +12,7 @@
   import LifeCycle from './components/LifeCycle.vue'
   import Pessoa from './components/Pessoa.vue'
   import Info from './components/Info.vue'
+  import Header from './components/Header.vue'
 
   export default {
     name: 'App',
@@ -18,7 +20,15 @@
       PrimeiroComponente,
       LifeCycle,
       Pessoa,
-      Info
+      Info,
+      Header
     }
   }
 </script>
+
+<style>
+  body{
+    background-color: rgb(151, 151, 151);
+    color: white;
+  }
+</style>
