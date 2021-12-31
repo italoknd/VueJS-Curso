@@ -4,6 +4,7 @@
     <PrimeiroComponente/>
     <LifeCycle/>
     <Pessoa/>
+    <Form/>
   </div>
 </template>
 
@@ -13,6 +14,8 @@
   import Pessoa from './components/Pessoa.vue'
   import Info from './components/Info.vue'
   import Header from './components/Header.vue'
+  import Form from './components/Form.vue'
+
 
   export default {
     name: 'App',
@@ -21,7 +24,8 @@
       LifeCycle,
       Pessoa,
       Info,
-      Header
+      Header,
+      Form
     }
   }
 </script>
