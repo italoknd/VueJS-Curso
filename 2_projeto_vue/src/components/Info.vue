@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>{{compEmail}}</p>
     <p v-if="esta_trabalhando">Estou trabalhando no momento</p>
     <p v-else>Não estou trabalhando</p>
     <p>Utilizo as seguintes linguagens back-end</p>
@@ -9,7 +10,7 @@
     <p>Utilizo as seguintes linguagens front-end</p>
     <ul>
       <li v-for="tecnologias in frontend_technologies" v-bind:key="tecnologias.id">
-        {{tecnologias.name}}
+        {{tecnologias.name}} 
       </li>
     </ul>
     <div>
@@ -26,11 +27,14 @@ import Picture from "./Picture.vue"
 
 export default {
   name: 'info',
+  props:{
+    compEmail: String,
+    email: String,
+    esta_trabalhando: Boolean
+  },
   data() {
     return {
-      esta_trabalhando: true,
       mostrar_email: false,
-      email: "EMAIL@gmail.com",
       meu_link: "https://google.com",
       buttonText: "Mostrar email",
 
