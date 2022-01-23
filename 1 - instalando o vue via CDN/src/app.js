@@ -10,8 +10,6 @@ const MyNameApp = {
 
   methods: {
     submitForm(e){
-
-
       e.preventDefault();
       console.log(this.input_name);
       console.log(this.input_age);
