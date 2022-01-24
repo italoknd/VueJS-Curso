@@ -3,8 +3,8 @@
     <form action="" id="form">
       <h1>Formulário:</h1>
       <fieldset>
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome" v-model="nome" placeholder="Informe seu nome:" required>
+          <label for="nome">Nome: </label>
+          <input type="text" name="nome" v-model="nome" placeholder="Informe seu nome:" required>
         <br>
         
         <label for="">Telefone: </label>
@@ -16,13 +16,13 @@
       <br>
       <label for="">Sim: <input type="radio" v-model="novidades" value="Sim"></label>
       <br>
-      <label for="">Não: <input type="radio" v-model="novidades" value="Não" checked></label>
+      <label for="">Não: <input type="radio" v-model="novidades" value="Não"></label>
       <br><br>
       <label for="">Nos informe seus interesses:</label>
       <br>
-      <label for="">Futebol:<input type="checkbox" v-model="interesses" optional></label><br>
-      <label for="">Formula 1:<input type="checkbox" v-model="interesses" optional></label><br>
-      <label for="">Volei:<input type="checkbox" v-model="interesses" optional></label>
+      <label for="">Futebol:<input type="checkbox" value="Futebol" v-model="interesses" optional></label><br>
+      <label for="">Formula 1:<input type="checkbox" value="Formula 1" v-model="interesses" optional></label><br>
+      <label for="">Volei:<input type="checkbox" value="Volei" v-model="interesses" optional></label>
       <br><br>
       <label for="">Como nos conheceu?</label>
       <br>
@@ -44,7 +44,7 @@
       <p>Telefone: {{ telefone }}</p>
       <p>Nos conheceu pela: {{ conheceu }}</p>
       <p>Desejou receber novidades? {{ novidades }}</p>
-      <p>Seus interesses:</p>
+      <p>Seus interesses: {{ interesses.toString() }}</p>
     </div>
   </div>
 </template>
@@ -58,7 +58,7 @@ export default {
      nome: "",
      telefone: "",
      novidades: "",
-     interesses: "Não informado",
+     interesses: [],
      conheceu: "",
      envio: 0,
     }
@@ -77,10 +77,13 @@ export default {
         divErro.appendChild(errorElement);
 
         setTimeout(()=>{
-          divErro.textContent = ""
-        },3000)
+          divErro.textContent = "";
+        },5000)
       }else{
         this.envio = 2;
+        setTimeout(()=>{
+          this.envio = 1;
+        },10000)
       }
     }
   },
@@ -98,10 +101,11 @@ export default {
   form{
     max-width: 800px;
     margin: auto auto 20px auto;
-    padding: 15px 0;
+    padding: 15px;
     border: 1px solid white;
     border-radius: 4px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.24);
+    text-align: left;
   }
 
   fieldset{
@@ -117,7 +121,7 @@ export default {
     font-size: .9em;
     outline: none;
     color: #247c7b;
-    margin: auto;
+    margin: 5px 0;
     padding: 2px 4px;
   }
 
@@ -135,7 +139,7 @@ export default {
   }
 
   select{
-    padding: 0px 20px;
+    padding: 0px 10px;
     outline: none;
   }
 
@@ -155,7 +159,6 @@ export default {
 
   #dados_do_form{
     padding: 20px 0;
-    margin-top: 20px;
     border: 1px solid ;
     text-indent: 10px;
     text-align: left;
@@ -164,5 +167,44 @@ export default {
     margin: auto;
     border-radius: 4px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.24);
+    animation: fadeOutDados 10s;
+  }
+
+  @keyframes fadeOutDados {
+    0%{
+      opacity: 1;
+      margin-top: 40px;
+    }25%{
+      opacity: 1;
+      margin-top: 40px;
+    }50%{
+      opacity: 1;
+      margin-top: 40px;
+    }75%{
+      opacity: 0;
+      margin-top: 40px;
+    }100%{
+      opacity: 0;
+      margin-top: -240px;
+    }
+  }
+
+  .erro{
+    animation: fadeOut 3s;
+    padding: 0;
+  }
+
+  @keyframes fadeOut {
+    0%{
+      opacity: 1;
+    }25%{
+      opacity: 1;
+    }50%{
+      opacity: 0.8;
+    }75%{
+      opacity: 0.6;
+    }100%{
+      opacity: 0;
+    }
   }
 </style>
