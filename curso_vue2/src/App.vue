@@ -4,6 +4,7 @@
     <Usuario />
     <Linguagens />
     <Form />
+    <Imagem />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Diretivas from './components/Diretivas de condicional/Diretivas.vue'
 import Usuario from './components/Diretivas de condicional/Usuario.vue'
 import Linguagens from './components/Diretiva for/Linguagens.vue'
 import Form from './components/V-model em formularios/Form.vue'
+import Imagem from './components/Diretiva v-bind/Imagem.vue'
 
 export default {
   name: 'App',
@@ -21,7 +23,7 @@ export default {
     Usuario,
     Linguagens,
     Form,
-
+    Imagem,
   }
 }
 </script>
