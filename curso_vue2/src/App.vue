@@ -5,6 +5,7 @@
     <Linguagens />
     <Form />
     <Imagem />
+    <Hooks />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import Usuario from './components/Diretivas de condicional/Usuario.vue'
 import Linguagens from './components/Diretiva for/Linguagens.vue'
 import Form from './components/V-model em formularios/Form.vue'
 import Imagem from './components/Diretiva v-bind/Imagem.vue'
+import Hooks from './components/LifeCycleHooks/Hooks.vue'
 
 export default {
   name: 'App',
@@ -24,6 +26,7 @@ export default {
     Linguagens,
     Form,
     Imagem,
+    Hooks,
   }
 }
 </script>
