@@ -21,7 +21,7 @@ import MudarImagem from './MudarImagem.vue'
     },
     methods: {
       TrocarImagem(){
-        this.avatar = "/imgs/avatar2.png"
+        this.avatar = "/"
 
       
       }
