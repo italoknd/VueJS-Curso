@@ -1,10 +1,11 @@
 <template>
   <div>
     <ul>
-      <li v-if="esta_logado"><a href="#">Meu Perfil</a></li>
+      <li v-if="esta_logado ? func() : ''"><a href="#">Meu Perfil</a></li>
       <li><a href="#">Home</a></li>
       <li><a href="#">Projects</a></li>
       <li><a href="#">About us</a></li>
+      <li><a href="#"></a>{{prop}}</li>
     </ul>
   </div>
 </template>
@@ -12,7 +13,17 @@
 <script>
 export default {
   name: "Header",
-  props:["esta_logado"]
+  data(){
+    return{
+      prop: this.props
+    }
+  },
+  props:["esta_logado"],
+  methods:{
+    func(){
+      console.log('oi')
+    }
+  }
 }
 </script>
 
