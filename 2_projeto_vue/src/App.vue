@@ -17,6 +17,7 @@
       </option>
     </select>
     <p>Local selecionado: {{ selected }}</p>
+    <Computed />
   </div>
 </template>
 
@@ -27,6 +28,7 @@ import Pessoa from './components/Pessoa.vue'
 import Info from './components/Info.vue'
 import Header from './components/Header.vue'
 import Form from './components/Form.vue'
+import Computed from './components/Computed.vue'
 
 export default {
   name: 'App',
@@ -36,7 +38,8 @@ export default {
     Pessoa,
     Info,
     Header,
-    Form
+    Form,
+    Computed
   },
   data() {
     return {
