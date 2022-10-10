@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header :esta_logado="true" />
+    <BaseAlert :baseStyle="bg" :text_message="text_message" />
     <PrimeiroComponente />
     <LifeCycle />
     <Pessoa />
@@ -18,7 +19,6 @@
     </select>
     <p>Local selecionado: {{ selected }}</p>
     <Computed />
-    <Teste />
   </div>
 </template>
 
@@ -30,7 +30,7 @@ import Info from './components/Info.vue'
 import Header from './components/Header.vue'
 import Form from './components/Form.vue'
 import Computed from './components/Computed.vue'
-import Teste from './components/Teste2.vue'
+import BaseAlert from './components/BaseAlert.vue'
 
 export default {
   name: 'App',
@@ -42,7 +42,7 @@ export default {
     Header,
     Form,
     Computed,
-    Teste
+    BaseAlert
   },
   data() {
     return {
@@ -54,7 +54,9 @@ export default {
         { country: 'Netherlands', id: 5 },
         { country: 'Switzerland', id: 6 }
       ],
-      selected: ''
+      selected: '',
+      bg: 'danger',
+      text_message: 'Falha ao enviar dados.'
     }
   },
   created() {
@@ -64,6 +66,11 @@ export default {
 </script>
 
 <style>
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 body {
   background-color: rgb(151, 151, 151);
   color: white;

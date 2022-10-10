@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-if="esta_logado ? func() : ''"><a href="#">Meu Perfil</a></li>
+      <li><a href="#">Meu Perfil</a></li>
       <li><a href="#">Home</a></li>
       <li><a href="#">Projects</a></li>
       <li><a href="#">About us</a></li>
@@ -34,7 +34,7 @@ export default {
     justify-content: flex-end;
     background-color: rgb(26, 26, 26);
     margin: -8px;
-    padding: 10px;
+    padding: 20px;
   }
 
   li{
