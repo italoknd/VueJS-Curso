@@ -2,20 +2,25 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    user:{
-      first_name: "Italo",
-      last_name: "Pedroza",
-      age: 22,
-      role: "Dev"
+    user: {
+      first_name: new String(),
+      last_name: new String(),
+      age: new Number(),
+      role: new String()
     },
-    products: ['Perfume', 'Sabão', 'Pão', 'Arroz', 'Vassoura']
-  },
-  getters: {
+    products: ['Perfume', 'Sabão', 'Pão', 'Arroz', 'Vassoura'],
+    sensitive_data: {
+      password: '',
+      user_name: '',
+      genre: ''
+    }
   },
   mutations: {
+    atualizarUser(state, data) {
+      state.user = data
+    }
   },
-  actions: {
-  },
-  modules: {
-  }
+  getters: {},
+  actions: {},
+  modules: {}
 })
