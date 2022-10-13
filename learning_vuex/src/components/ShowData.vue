@@ -42,8 +42,8 @@ export default {
 <style scoped>
 .bg {
   background: #2f2f2f;
-  width: 100vw;
-  height: 100vh;
+  width: 98vw;
+  height: 50vh;
   color: white;
   padding: 0;
   margin: 0;

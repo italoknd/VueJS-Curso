@@ -1,23 +1,31 @@
 <template>
-  <div>
-    <p>Comes from the store: {{ $store.state.products }}</p>
-    <br>
+  <h1>Produtos</h1>
+  <AppProducts class="flex" />
+  <h1>Carrinho:</h1>
+  <AppCart />
+  <div style="margin-top: 250px;">
+    <!-- <p>Comes from the store: {{ $store.state.products }}</p> -->
+    <br />
     <p>Entire object: {{ user }}</p>
-    <p>First name: {{first_name}}</p>
-    <p>Last name: {{last_name}}</p>
-    <p>Full name: {{first_name}} {{last_name}}</p>
+    <p>First name: {{ first_name }}</p>
+    <p>Last name: {{ last_name }}</p>
+    <p>Full name: {{ first_name }} {{ last_name }}</p>
     <button @click="updateUser()">Update data</button>
+    <ShowData />
   </div>
-  <ShowData />
 </template>
 
 <script>
 import ShowData from '../src/components/ShowData.vue'
+import AppProducts from './components/Products/AppProducts.vue'
+import AppCart from './components/Cart/AppCart.vue'
 
 export default {
   name: 'App',
-  components:{
+  components: {
     ShowData,
+    AppProducts,
+    AppCart
   },
   computed: {
     user() {
@@ -54,6 +62,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 60px 0 0 0;
+  padding: 0;
+
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
