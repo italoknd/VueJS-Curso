@@ -16,10 +16,22 @@
         }}
         <br />
         Quantidade:
+        <br />
+        <button class="btn-card" @click="removeProduct(product)">
+          <strong> Remover do carrinho </strong>
+        </button>
       </div>
     </div>
     <div>
-      <h2>Valor total: {{ $store.state.total_value }}</h2>
+      <h2>
+        Valor total:
+        {{
+          $store.getters.total.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+          })
+        }}
+      </h2>
     </div>
   </div>
 </template>
@@ -34,6 +46,14 @@ export default {
       empty_cart: cart_img,
       cart_products: this.$store.state.cart,
       amount: []
+    }
+  },
+  mounted() {
+    console.log("dispatch >>>>",this.$store)
+  },
+  methods: {
+    removeProduct(product) {
+      this.$store.commit('removeProduct', product.id)
     }
   }
 }
@@ -66,7 +86,7 @@ export default {
   border: none;
   padding: 10px;
   border-radius: 4px;
-  background: #f3b90c;
+  background: #f51c1c;
   color: white;
   font-size: 15px;
   cursor: pointer;
@@ -75,6 +95,6 @@ export default {
 }
 
 .btn-card:hover {
-  background: #a18513;
+  background: #b91a1a;
 }
 </style>

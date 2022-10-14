@@ -48,14 +48,25 @@ export default createStore({
     },
     addProduct(state, data) {
       state.cart.push(data)
-
-      let total = []
-      total.push(data.price)
-
-      state.total_value = total
+    },
+    removeProduct(state, data) {
+      const index = state.cart.findIndex(item => {
+        item.id === data.id
+      })
+      state.cart.splice(index, 1)
     }
   },
-  getters: {},
-  actions: {},
+  getters: {
+    total(state) {
+      return state.cart.reduce((total, item) => {
+        return (total += item.price)
+      }, 0)
+    }
+  },
+  actions: {
+    storeUser(context, data) {
+      console.log(context, data)
+    }
+  },
   modules: {}
 })
