@@ -1,12 +1,16 @@
 <template>
   <div id="app">
     <CompAPI />
+    <Computed />
+    <Watch />
   </div>
 </template>
 
 <script>
 import MixinsListarPessoas from './components/Mixins/MixinsListarPessoas.vue'
 import CompAPI from './components/CompAPI.vue'
+import Computed from './components/Computed.vue'
+import Watch from './components/Watch.vue'
 
 export default {
   name: 'App',
@@ -14,17 +18,16 @@ export default {
   mounted() {
     this.MixinsListarPessoas()
   },
-  components: { CompAPI }
+  components: { CompAPI, Computed, Watch }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

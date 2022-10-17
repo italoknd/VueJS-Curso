@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="bg">
     <div>
       {{ num }}
       <button @click="inc()">Increase</button>
@@ -39,3 +39,10 @@ export default {
     </div>
   </div>
 </template>
+<style scoped>
+.bg{
+  background: rgb(247, 128, 30);
+  padding: 20px;
+  color: white;
+}
+</style>
