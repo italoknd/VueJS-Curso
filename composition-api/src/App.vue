@@ -3,6 +3,8 @@
     <CompAPI />
     <Computed />
     <Watch />
+    <Hooks />
+    <ReceberDados />
   </div>
 </template>
 
@@ -11,6 +13,8 @@ import MixinsListarPessoas from './components/Mixins/MixinsListarPessoas.vue'
 import CompAPI from './components/CompAPI.vue'
 import Computed from './components/Computed.vue'
 import Watch from './components/Watch.vue'
+import Hooks from './components/Hooks.vue'
+import ReceberDados from './components/PropsAndEmit/ReceberDados.vue'
 
 export default {
   name: 'App',
@@ -18,7 +22,7 @@ export default {
   mounted() {
     this.MixinsListarPessoas()
   },
-  components: { CompAPI, Computed, Watch }
+  components: { CompAPI, Computed, Watch, Hooks, ReceberDados }
 }
 </script>
 

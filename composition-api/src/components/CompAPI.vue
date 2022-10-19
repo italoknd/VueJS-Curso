@@ -9,7 +9,7 @@ export default {
       age: 22
     })
 
-    //functions
+    //functions 
     const inc = () => {
       return num.value++
     }

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+        <ans:mensagemTISS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://www.ans.gov.br/padroes/tiss/schemas 
+        http://www.ans.gov.br/padroes/tiss/schemas/tissV3_05_00.xsd">
+    <ans:cabecalho>
+        <ans:identificacaoTransacao>
+            <ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao>
+            <ans:sequencialTransacao>13</ans:sequencialTransacao>
+            <ans:dataRegistroTransacao>2022-10-18</ans:dataRegistroTransacao>
+            <ans:horaRegistroTransacao>05:45:30</ans:horaRegistroTransacao>
+        </ans:identificacaoTransacao>
+        <ans:origem>
+            <ans:identificacaoPrestador>
+                <ans:codigoPrestadorNaOperadora>34823419000165</ans:codigoPrestadorNaOperadora>
+            </ans:identificacaoPrestador>
+        </ans:origem>
+        <ans:destino>
+            <ans:registroANS>123123</ans:registroANS>
+        </ans:destino>
+        <ans:Padrao>3.05.00</ans:Padrao>
+    </ans:cabecalho>
+    <ans:prestadorParaOperadora>
+        <ans:loteGuias>
+            <ans:numeroLote>13</ans:numeroLote>
+            <ans:guiasTISS>
+                <ans:guiaConsulta>
+                    <ans:cabecalhoConsulta>
+                        <ans:registroANS>123123</ans:registroANS>
+                        <ans:numeroGuiaPrestador>780000000072169</ans:numeroGuiaPrestador>
+                    </ans:cabecalhoConsulta>
+                    <ans:dadosBeneficiario>
+                        <ans:numeroCarteira>123567416534</ans:numeroCarteira>
+                        <ans:nomeBeneficiario>ITALO PEDROZAA</ans:nomeBeneficiario>
+                        <ans:atendimentoRN>N</ans:atendimentoRN>
+                    </ans:dadosBeneficiario>
+                    <ans:contratadoExecutante>
+                        <ans:codigoPrestadorNaOperadora>34823419000165</ans:codigoPrestadorNaOperadora>
+                        <ans:nomeContratado>MEDICAL DIAGNOSTICOS ASSISTENCIA MEDICAL LTDA</ans:nomeContratado>
+                    </ans:contratadoExecutante>
+                    <ans:profissionalExecutante>
+                        <ans:CBOS>225127</ans:CBOS>
+                        <ans:conselhoProfissional>6</ans:conselhoProfissional>
+                        <ans:nomeProfissional>MARIA DAS GRAÇAS LOPES PANTOJA</ans:nomeProfissional>
+                        <ans:numeroConselhoProfissional>3460</ans:numeroConselhoProfissional>
+                        <ans:UF>13</ans:UF>
+                    </ans:profissionalExecutante>
+                    <ans:indicacaoAcidente>9</ans:indicacaoAcidente>
+                    <ans:dadosAtendimento>
+                        <ans:tipoConsulta>1</ans:tipoConsulta>
+                        <ans:dataAtendimento>2022-10-10</ans:dataAtendimento>
+                        <ans:procedimento>
+                            <ans:codigoTabela>22</ans:codigoTabela>
+                            <ans:codigoProcedimento>209040041</ans:codigoProcedimento>
+                            <ans:valorProcedimento>200</ans:valorProcedimento>
+                        </ans:procedimento>
+                    </ans:dadosAtendimento>
+                </ans:guiaConsulta>
+                <ans:guiaConsulta>
+                    <ans:cabecalhoConsulta>
+                        <ans:numeroGuiaPrestador>780000000072166</ans:numeroGuiaPrestador>
+                        <ans:registroANS>123123</ans:registroANS>
+                    </ans:cabecalhoConsulta>
+                    <ans:dadosBeneficiario>
+                        <ans:numeroCarteira>123567416534</ans:numeroCarteira>
+                        <ans:nomeBeneficiario>ITALO PEDROZAA</ans:nomeBeneficiario>
+                        <ans:atendimentoRN>N</ans:atendimentoRN>
+                    </ans:dadosBeneficiario>
+                    <ans:contratadoExecutante>
+                        <ans:codigoPrestadorNaOperadora>34823419000165</ans:codigoPrestadorNaOperadora>
+                        <ans:nomeContratado>MEDICAL DIAGNOSTICOS ASSISTENCIA MEDICAL LTDA</ans:nomeContratado>
+                    </ans:contratadoExecutante>
+                    <ans:profissionalExecutante>
+                        <ans:CBOS>225127</ans:CBOS>
+                        <ans:conselhoProfissional>6</ans:conselhoProfissional>
+                        <ans:nomeProfissional>MARIA DAS GRAÇAS LOPES PANTOJA</ans:nomeProfissional>
+                        <ans:numeroConselhoProfissional>3460</ans:numeroConselhoProfissional>
+                        <ans:UF>13</ans:UF>
+                    </ans:profissionalExecutante>
+                    <ans:indicacaoAcidente>9</ans:indicacaoAcidente>
+                    <ans:dadosAtendimento>
+                        <ans:tipoConsulta>1</ans:tipoConsulta>
+                        <ans:dataAtendimento>2022-10-10</ans:dataAtendimento>
+                        <ans:procedimento>
+                            <ans:codigoTabela>22</ans:codigoTabela>
+                            <ans:codigoProcedimento>40202488</ans:codigoProcedimento>
+                            <ans:valorProcedimento>500</ans:valorProcedimento>
+                        </ans:procedimento>
+                    </ans:dadosAtendimento>
+                </ans:guiaConsulta>
+            </ans:guiasTISS>
+        </ans:loteGuias>
+    </ans:prestadorParaOperadora>
+    <ans:epilogo>
+        <ans:hash>4A22EB6EDE28031202A677A023BFDC2E</ans:hash>
+    </ans:epilogo>
+</ans:mensagemTISS>
