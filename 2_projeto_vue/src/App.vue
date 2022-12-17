@@ -19,21 +19,23 @@
     </select>
     <p>Local selecionado: {{ selected }}</p>
     <Computed />
+    <RenderingCleanerLists />
   </div>
 </template>
 
 <script>
-import PrimeiroComponente from './components/PrimeiroComponente.vue'
-import LifeCycle from './components/LifeCycle.vue'
-import Pessoa from './components/Pessoa.vue'
-import Info from './components/Info.vue'
-import Header from './components/Header.vue'
-import Form from './components/Form.vue'
-import Computed from './components/Computed.vue'
-import BaseAlert from './components/BaseAlert.vue'
+import PrimeiroComponente from "./components/PrimeiroComponente.vue";
+import LifeCycle from "./components/LifeCycle.vue";
+import Pessoa from "./components/Pessoa.vue";
+import Info from "./components/Info.vue";
+import Header from "./components/Header.vue";
+import Form from "./components/Form.vue";
+import Computed from "./components/Computed.vue";
+import BaseAlert from "./components/BaseAlert.vue";
+import RenderingCleanerLists from "./components/cleaner-components/RenderingCleanerLists.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     PrimeiroComponente,
     LifeCycle,
@@ -42,33 +44,35 @@ export default {
     Header,
     Form,
     Computed,
-    BaseAlert
+    BaseAlert,
+    RenderingCleanerLists
   },
   data() {
     return {
       locations: [
-        { country: 'Brazil', id: 1 },
-        { country: 'Germany', id: 2 },
-        { country: 'EUA', id: 3 },
-        { country: 'Spain', id: 4 },
-        { country: 'Netherlands', id: 5 },
-        { country: 'Switzerland', id: 6 }
+        { country: "Brazil", id: 1 },
+        { country: "Germany", id: 2 },
+        { country: "EUA", id: 3 },
+        { country: "Spain", id: 4 },
+        { country: "Netherlands", id: 5 },
+        { country: "Switzerland", id: 6 }
       ],
-      selected: '',
-      bg: 'danger',
-      text_message: 'Falha ao enviar dados.'
-    }
+      selected: "",
+      bg: "danger",
+      text_message: "Falha ao enviar dados."
+    };
   },
   created() {
-    this.selected = this.locations[3].country
+    this.selected = this.locations[3].country;
   }
-}
+};
 </script>
 
 <style>
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
 }
 
 body {
