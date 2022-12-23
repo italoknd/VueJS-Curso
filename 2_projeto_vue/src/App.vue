@@ -21,6 +21,7 @@
     <Computed />
     <RenderingCleanerLists />
     <VOnce />
+    <VMemo />
   </div>
 </template>
 
@@ -34,7 +35,9 @@ import Form from "./components/Form.vue";
 import Computed from "./components/Computed.vue";
 import BaseAlert from "./components/BaseAlert.vue";
 import RenderingCleanerLists from "./components/cleaner-components/RenderingCleanerLists.vue";
+
 import VOnce from "./components/v-once/VOnce.vue";
+import VMemo from "./components/v-memo/VMemo.vue";
 
 export default {
   name: "App",
@@ -48,7 +51,8 @@ export default {
     Computed,
     BaseAlert,
     RenderingCleanerLists,
-    VOnce
+    VOnce,
+    VMemo
   },
   data() {
     return {
