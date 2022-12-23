@@ -20,6 +20,7 @@
     <p>Local selecionado: {{ selected }}</p>
     <Computed />
     <RenderingCleanerLists />
+    <VOnce />
   </div>
 </template>
 
@@ -33,6 +34,7 @@ import Form from "./components/Form.vue";
 import Computed from "./components/Computed.vue";
 import BaseAlert from "./components/BaseAlert.vue";
 import RenderingCleanerLists from "./components/cleaner-components/RenderingCleanerLists.vue";
+import VOnce from "./components/v-once/VOnce.vue";
 
 export default {
   name: "App",
@@ -45,7 +47,8 @@ export default {
     Form,
     Computed,
     BaseAlert,
-    RenderingCleanerLists
+    RenderingCleanerLists,
+    VOnce
   },
   data() {
     return {
@@ -72,11 +75,16 @@ export default {
 * {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 body {
   background-color: rgb(151, 151, 151);
   color: white;
+}
+
+button {
+  background: lightgray;
+  padding: 10px;
 }
 </style>
