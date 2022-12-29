@@ -48,9 +48,6 @@ export default {
       amount: []
     }
   },
-  mounted() {
-    console.log("dispatch >>>>",this.$store)
-  },
   methods: {
     removeProduct(product) {
       this.$store.commit('removeProduct', product.id)

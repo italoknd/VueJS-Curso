@@ -3,25 +3,25 @@
   <AppProducts class="flex" />
   <h1>Carrinho:</h1>
   <AppCart />
-  <div style="margin-top: 250px;">
+  <div style="margin-top: 250px">
     <!-- <p>Comes from the store: {{ $store.state.products }}</p> -->
     <br />
     <p>Entire object: {{ user }}</p>
     <p>First name: {{ first_name }}</p>
     <p>Last name: {{ last_name }}</p>
-    <p>Full name: {{ first_name }} {{ last_name }}</p>
+    <p>Full name: {{ $store.getters.fullName }} </p>
     <button @click="updateUser()">Update data</button>
     <ShowData />
   </div>
 </template>
 
 <script>
-import ShowData from '../src/components/ShowData.vue'
-import AppProducts from './components/Products/AppProducts.vue'
-import AppCart from './components/Cart/AppCart.vue'
+import ShowData from "../src/components/ShowData.vue";
+import AppProducts from "./components/Products/AppProducts.vue";
+import AppCart from "./components/Cart/AppCart.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     ShowData,
     AppProducts,
@@ -29,30 +29,27 @@ export default {
   },
   computed: {
     user() {
-      return this.$store.state.user
+      return this.$store.state.user;
     },
     first_name() {
-      return this.$store.state.user.first_name
+      return this.$store.state.user.first_name;
     },
     last_name() {
-      return this.$store.state.user.last_name
+      return this.$store.state.user.last_name;
     }
-  },
-  mounted() {
-    console.log(this.$store.state.user.first_name)
   },
   methods: {
     updateUser() {
       const newUser = {
-        first_name: 'Italo',
-        last_name: 'Pedroza',
+        first_name: "Italo",
+        last_name: "Pedroza",
         age: 24,
-        role: 'Developer'
-      }
-      this.$store.commit('atualizarUser', newUser)
+        role: "Developer"
+      };
+      this.$store.dispatch("storeUser", newUser);
     }
   }
-}
+};
 </script>
 
 <style>
@@ -64,7 +61,6 @@ export default {
   color: #2c3e50;
   margin: 60px 0 0 0;
   padding: 0;
-
 }
 
 .flex {
