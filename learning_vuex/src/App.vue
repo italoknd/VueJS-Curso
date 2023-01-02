@@ -9,7 +9,7 @@
     <p>Entire object: {{ user }}</p>
     <p>First name: {{ first_name }}</p>
     <p>Last name: {{ last_name }}</p>
-    <p>Full name: {{ $store.getters.fullName }} </p>
+    <p>1 - Full name: {{ fullName }}</p>
     <button @click="updateUser()">Update data</button>
     <ShowData />
   </div>
@@ -19,6 +19,7 @@
 import ShowData from "../src/components/ShowData.vue";
 import AppProducts from "./components/Products/AppProducts.vue";
 import AppCart from "./components/Cart/AppCart.vue";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   name: "App",
@@ -28,15 +29,22 @@ export default {
     AppCart
   },
   computed: {
-    user() {
-      return this.$store.state.user;
-    },
-    first_name() {
-      return this.$store.state.user.first_name;
-    },
-    last_name() {
-      return this.$store.state.user.last_name;
-    }
+    ...mapGetters(["fullName"]),
+    ...mapState({
+      user: state => state.user,
+      first_name: state => state.user.first_name,
+      last_name: state => state.user.last_name
+    })
+
+    // user() {
+    //   return this.$store.state.user;
+    // },
+    // first_name() {
+    //   return this.$store.state.user.first_name;
+    // },
+    // last_name() {
+    //   return this.$store.state.user.last_name;
+    // }
   },
   methods: {
     updateUser() {
