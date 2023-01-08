@@ -6,15 +6,6 @@
           {{ item }}
         </div>
       </div>
-      <!-- <div class="controls">
-        <div class="first">&#171;</div>
-        <div class="prev"></div>
-        <div class="numbers">
-          <div>1</div>
-        </div>
-        <div class="next">></div>
-        <div class="last">&#187;</div>
-      </div> -->
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item" @click="controls.firstPage()">
@@ -74,7 +65,7 @@ const controls = ref({
   firstPage() {
     state.value.page = 1
   },
-  lastPage(){
+  lastPage() {
     state.value.page = state.value.totalPages
   }
 })
