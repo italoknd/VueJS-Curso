@@ -12,18 +12,18 @@
     <p>1 - Full name: {{ fullName }}</p>
     <button @click="updateUser()">Update data</button>
     <ShowData />
-    <map-store/>
+    <map-store />
   </div>
 </template>
 
 <script>
-import ShowData from "../src/components/ShowData.vue";
-import AppProducts from "./components/Products/AppProducts.vue";
-import AppCart from "./components/Cart/AppCart.vue";
-import MapStore from './components/MapStore.vue';
+import ShowData from '../src/components/ShowData.vue'
+import AppProducts from './components/Products/AppProducts.vue'
+import AppCart from './components/Cart/AppCart.vue'
+import MapStore from './components/MapStore.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     ShowData,
     AppProducts,
@@ -32,27 +32,27 @@ export default {
   },
   computed: {
     user() {
-      return this.$store.state.user;
+      return this.$store.state.user
     },
     first_name() {
-      return this.$store.state.user.first_name;
+      return this.$store.state.user.first_name
     },
     last_name() {
-      return this.$store.state.user.last_name;
+      return this.$store.state.user.last_name
     }
   },
   methods: {
     updateUser() {
       const newUser = {
-        first_name: "Italo",
-        last_name: "Pedroza",
+        first_name: 'Italo',
+        last_name: 'Pedroza',
         age: 24,
-        role: "Developer"
-      };
-      this.$store.dispatch("storeUser", newUser);
+        role: 'Developer'
+      }
+      this.$store.dispatch('storeUser', newUser)
     }
   }
-};
+}
 </script>
 
 <style>
