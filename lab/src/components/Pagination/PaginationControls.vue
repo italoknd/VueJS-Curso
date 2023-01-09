@@ -1,7 +1,7 @@
 <template>
   <nav aria-label="Page navigation example" class="controls mt-5">
     <ul class="pagination">
-      <li v-show="extremities" class="page-item" @click="controls.firstPage()">
+      <li v-if="extremities" class="page-item" @click="controls.firstPage()">
         <a class="page-link" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
         </a>
@@ -19,7 +19,7 @@
           <span aria-hidden="true">&gt;</span>
         </a>
       </li>
-      <li v-show="extremities" class="page-item" @click="controls.lastPage()">
+      <li v-if="extremities" class="page-item" @click="controls.lastPage()">
         <a class="page-link" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
