@@ -6,39 +6,14 @@
           <p class="text-center">{{ item }}</p>
         </div>
       </div>
-      <nav aria-label="Page navigation example" class="controls mt-5">
-        <ul class="pagination">
-          <li class="page-item" @click="controls.firstPage()">
-            <a class="page-link" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item" @click="controls.prevPage()">
-            <a class="page-link" aria-label="Previous">
-              <span aria-hidden="true">&lt;</span>
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link">{{ state.page }}</a>
-          </li>
-          <li class="page-item" @click="controls.nextPage()">
-            <a class="page-link" aria-label="Next">
-              <span aria-hidden="true">&gt;</span>
-            </a>
-          </li>
-          <li class="page-item" @click="controls.lastPage()">
-            <a class="page-link" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <PaginationControls :state="state" :extremities="false"/>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, watch } from 'vue'
+import PaginationControls from './Pagination/PaginationControls.vue'
 
 onMounted(() => {
   update()
@@ -66,25 +41,6 @@ const update = () => {
 
   paginatedItems.value = items.slice(start, end)
 }
-
-const controls = ref({
-  nextPage() {
-    state.value.page++
-
-    if (state.value.page > state.value.totalPages) state.value.page--
-  },
-  prevPage() {
-    state.value.page--
-
-    if (state.value.page < 1) state.value.page++
-  },
-  firstPage() {
-    state.value.page = 1
-  },
-  lastPage() {
-    state.value.page = state.value.totalPages
-  }
-})
 
 watch(
   state,
