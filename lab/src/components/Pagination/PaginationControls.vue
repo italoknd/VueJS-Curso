@@ -1,5 +1,5 @@
 <template>
-  <nav aria-label="Page navigation example" class="controls mt-5">
+  <nav aria-label="Page navigation example" class="controls mt-5" @click="getPaginatedItems()">
     <ul class="pagination">
       <li v-if="extremities" class="page-item" @click="controls.firstPage()">
         <a class="page-link" aria-label="Previous">
@@ -12,7 +12,7 @@
         </a>
       </li>
       <li class="page-item">
-        <a class="page-link">{{ state.page }}</a>
+        <a class="page-link">{{ state }}</a>
       </li>
       <li class="page-item" @click="controls.nextPage()">
         <a class="page-link" aria-label="Next">
@@ -29,37 +29,71 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 
 export default {
   props: {
-    state: Object,
+    itemsPerPage: Number,
+    yourArray: Array,
     extremities: Boolean
   },
-  setup(props) {
-    const state = props.state
+
+  setup({ itemsPerPage, yourArray, extremities }, ctx) {
+    onMounted(() => {
+      update()
+    })
+    //initial state of pagination
+    const state = ref({
+      page: 1,
+      itemsPerPage: itemsPerPage,
+      totalPages: Math.ceil(yourArray.length / itemsPerPage) //rounding to a higher number to avoid lost of items when the division results in broken numbers
+    })
 
     const controls = ref({
       nextPage() {
-        state.page++
+        state.value.page++
 
-        if (state.page > state.totalPages) state.page--
+        if (state.value.page > state.value.totalPages) state.value.page--
       },
       prevPage() {
-        state.page--
+        state.value.page--
 
-        if (state.page < 1) state.page++
+        if (state.value.page < 1) state.value.page++
       },
       firstPage() {
-        state.page = 1
+        state.value.page = 1
       },
       lastPage() {
-        state.page = state.totalPages
+        state.value.page = state.value.totalPages
       }
     })
 
+    const paginatedItems = ref([])
+
+    const update = () => {
+      let page = state.value.page - 1
+      let start = page * state.value.itemsPerPage
+      let end = start + state.value.itemsPerPage
+
+      paginatedItems.value = yourArray.slice(start, end)
+    }
+
+    const getPaginatedItems = () => {
+      ctx.emit('paginatedItems', paginatedItems.value)
+    }
+
+    watch(
+      state,
+      () => {
+        update()
+      },
+      { deep: true }
+    )
+
     return {
-      controls
+      controls,
+      getPaginatedItems,
+      extremities
     }
   }
 }
