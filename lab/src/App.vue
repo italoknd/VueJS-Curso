@@ -1,16 +1,21 @@
 <template>
-  <Pagination />
+  <div>
+    <Pagination />
+    <Editor />
+  </div>
 </template>
 
 <script>
-import Pagination from './components/Pagination'
+import Pagination from "./components/Pagination";
+import Editor from "./components/Editor.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Pagination
+    Pagination,
+    Editor
   }
-}
+};
 </script>
 
 <style>
@@ -31,7 +36,7 @@ export default {
 *,
 button,
 input {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
