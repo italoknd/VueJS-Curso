@@ -2,19 +2,21 @@
   <div>
     <Pagination />
     <Editor />
+    <AnimatedList/>
   </div>
 </template>
 
 <script>
-import Pagination from "./components/Pagination";
 import Editor from "./components/Editor.vue";
+import Pagination from "./components/Pagination.vue";
+import AnimatedList from "./components/TransitionGroup/AnimatedList.vue";
 
 export default {
-  name: "App",
   components: {
     Pagination,
-    Editor
-  }
+    Editor,
+    AnimatedList
+  },
 };
 </script>
 
@@ -31,18 +33,16 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
-*,
 button,
 input {
   font-family: "Roboto", sans-serif;
 }
 
-body {
+html,body {
   height: 100vh;
-
-  background-color: var(--black);
   color: var(--white);
 }
 

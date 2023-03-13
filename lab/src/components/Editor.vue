@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="main-container">
     <DxHtmlEditor
       :value="form"
       height="725px"
@@ -102,6 +102,7 @@ import {
 import { markup, tabs } from './data.js';
 
 export default {
+  name: "VueEditor",
   components: {
     DxHtmlEditor,
     DxMediaResizing,
