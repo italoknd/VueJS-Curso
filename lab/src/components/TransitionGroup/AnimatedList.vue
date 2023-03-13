@@ -8,6 +8,7 @@
           type="text"
           placeholder="Name"
           v-model="nameInput"
+          @keyup.enter="invite()"
         />
         <button
           data-bs-toggle="toast"
@@ -21,7 +22,11 @@
       <div class="d-flex justify-content-center">
         <transition-group name="list" tag="ul" class="invite-list">
           <li v-for="(name, index) in inviteList" :key="index">
-            <button class="btn btn-danger btn-sm mb-1" @click="uninvite(index)">
+            <button
+              type="button"
+              class="btn btn-danger btn-sm mb-1"
+              @click="uninvite(index)"
+            >
               X
             </button>
             <span>{{ name }}</span>
@@ -100,7 +105,7 @@ const uninvite = (index: number): void => {
   border-radius: 8px;
 }
 
-.invite-list li{
+.invite-list li {
   margin: 10px 0;
 }
 
