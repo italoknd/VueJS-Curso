@@ -2,7 +2,8 @@
   <div>
     <Pagination />
     <Editor />
-    <AnimatedList/>
+    <AnimatedList />
+    <Charts :data="chartData" />
   </div>
 </template>
 
@@ -10,12 +11,28 @@
 import Editor from "./components/Editor.vue";
 import Pagination from "./components/Pagination.vue";
 import AnimatedList from "./components/TransitionGroup/AnimatedList.vue";
+import Charts from "./components/VueCharts/Charts.vue";
 
 export default {
   components: {
     Pagination,
     Editor,
-    AnimatedList
+    AnimatedList,
+    Charts,
+  },
+  data() {
+    return {
+      chartData: {
+        labels: ["January", "February", "March", "April"],
+        datasets: [
+          {
+            label: "Data One",
+            backgroundColor: "#f87979",
+            data: [23, 20, 12, 44],
+          },
+        ],
+      },
+    };
   },
 };
 </script>
@@ -33,7 +50,6 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 button,
@@ -41,7 +57,8 @@ input {
   font-family: "Roboto", sans-serif;
 }
 
-html,body {
+html,
+body {
   height: 100vh;
   color: var(--white);
 }

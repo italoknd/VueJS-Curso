@@ -10,6 +10,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "chart.js": "^4.3.0",
     "core-js": "^3.8.3",
     "devexpress-diagram": "^2.1.57",
     "devexpress-gantt": "^4.0.27",
@@ -26,7 +27,8 @@
     "inferno-dom": "^1.0.7",
     "inferno-extras": "^8.0.6",
     "inferno-hydrate": "^8.0.6",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-chartjs": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
