@@ -11,19 +11,22 @@ const posts = ref<IUserPosts[]>([
 ]);
 </script>
 <template>
-  <section>
+  <div>
     <img src="../../assets/capybara.jpg" :alt="posts[0].alt" />
-  </section>
+    <img src="../../assets/capybara.jpg" :alt="posts[0].alt" />
+    <img src="../../assets/capybara.jpg" :alt="posts[0].alt" />
+  </div>
 </template>
 <style scoped>
-section{
-height: 100%;
-overflow-y: scroll;
+div {
+  height: 100%;
+  overflow-y: scroll;
 }
 
 img {
-  height: 400px;
-  width: 400px;
-  object-fit: cover;
+  height: 600px;
+  width: 600px;
+  object-fit: contain;
+  margin: auto;
 }
 </style>

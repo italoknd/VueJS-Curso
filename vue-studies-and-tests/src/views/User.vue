@@ -62,4 +62,8 @@ button:hover {
   border: 1px solid white;
   color: white;
 }
+
+section {
+  width: 50%;
+}
 </style>
